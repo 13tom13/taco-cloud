@@ -4,9 +4,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.*;
 
-@NoArgsConstructor(force = true)
+
 @RequiredArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor(force = true)
 @Data
 @Entity
 public class Ingredient {

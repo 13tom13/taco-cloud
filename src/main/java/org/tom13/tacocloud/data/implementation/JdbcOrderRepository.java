@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import org.tom13.tacocloud.data.OrderRepository;
 import org.tom13.tacocloud.entity.model.Ingredient;
-import org.tom13.tacocloud.entity.model.IngredientRef;
 import org.tom13.tacocloud.entity.model.Taco;
 import org.tom13.tacocloud.entity.model.TacoOrder;
 
@@ -21,7 +20,7 @@ import java.util.List;
 @Repository
 public class JdbcOrderRepository implements OrderRepository {
 
-    private JdbcOperations jdbcOperations;
+    private final JdbcOperations jdbcOperations;
 
 
     public JdbcOrderRepository(JdbcOperations jdbcOperations) {

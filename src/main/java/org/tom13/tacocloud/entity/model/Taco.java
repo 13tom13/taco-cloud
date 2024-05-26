@@ -4,10 +4,14 @@ import java.util.List;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import lombok.Data;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 
 @Data
+@Table
 public class Taco {
 
+    @Id
     private Long id;
     private Date createdAt = new Date();
 

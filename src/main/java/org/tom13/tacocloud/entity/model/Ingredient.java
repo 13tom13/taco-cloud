@@ -1,18 +1,28 @@
 package org.tom13.tacocloud.entity.model;
 
+import lombok.AccessLevel;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Table;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.Id;
 
 @Data
-@Table
+@RequiredArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED, force = true)
+@Entity
 public class Ingredient {
 
     @Id
     private final String id;
-
     private final String name;
+
+    @Enumerated(EnumType.STRING)
     private final Type type;
+
     public enum Type {
         WRAP, PROTEIN, VEGGIES, CHEESE, SAUCE
     }

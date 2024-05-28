@@ -13,6 +13,7 @@ import org.tom13.tacocloud.data.OrderRepository;
 import org.tom13.tacocloud.entity.model.TacoOrder;
 
 import javax.validation.Valid;
+import java.util.Date;
 
 
 @Slf4j
@@ -39,6 +40,8 @@ public class OrderController {
         if (errors.hasErrors()) {
             return "orderForm";
         }
+        System.out.println("tacoOrder from order controller: " + order);
+        order.setPlacedAt(new Date());
         orderRepo.save(order);
         sessionStatus.setComplete();
 

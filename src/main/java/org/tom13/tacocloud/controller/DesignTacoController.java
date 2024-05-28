@@ -59,7 +59,10 @@ public class DesignTacoController {
         if (errors.hasErrors()) {
             return "design";
         }
+        System.out.println("tacoOrder before added taco: " + tacoOrder);
+        System.out.println("taco for added: " + taco);
         tacoOrder.addTaco(taco);
+        System.out.println("tacoOrder after added taco: " + tacoOrder);
         log.info("Processing taco: {}", taco);
         return "redirect:/orders/current";
     }

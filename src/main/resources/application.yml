@@ -10,9 +10,3 @@ spring:
     properties:
       hibernate:
         globally_quoted_identifiers: true
-#  security:
-#    oauth2:
-#      client:
-#        registration:
-#          github:
-#            client-id:
